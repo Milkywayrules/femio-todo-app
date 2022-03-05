@@ -15,8 +15,8 @@ function App() {
             count is: {count}
           </button>
         </p>
-        <p>
-          Edit <code>App.tsx</code> and save to test HMR updates.
+        <p className='my-4 px-6 py-1 bg-blue-200 text-gray-700 rounded'>
+          Halo!
         </p>
         <p>
           <a
