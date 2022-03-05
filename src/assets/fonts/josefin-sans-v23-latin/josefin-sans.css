@@ -3,8 +3,7 @@
   font-style: normal;
   font-weight: 400;
   src: url('./josefin-sans-v23-latin-regular.eot');
-  src: local(''),
-    url('./josefin-sans-v23-latin-regular.eot?#iefix') format('embedded-opentype'),
+  src: local(''), url('./josefin-sans-v23-latin-regular.eot?#iefix') format('embedded-opentype'),
     url('./josefin-sans-v23-latin-regular.woff2') format('woff2'),
     url('./josefin-sans-v23-latin-regular.woff') format('woff'),
     url('./josefin-sans-v23-latin-regular.ttf') format('truetype'),
@@ -16,8 +15,7 @@
   font-style: normal;
   font-weight: 700;
   src: url('./josefin-sans-v23-latin-700.eot');
-  src: local(''),
-    url('./josefin-sans-v23-latin-700.eot?#iefix') format('embedded-opentype'),
+  src: local(''), url('./josefin-sans-v23-latin-700.eot?#iefix') format('embedded-opentype'),
     url('./josefin-sans-v23-latin-700.woff2') format('woff2'),
     url('./josefin-sans-v23-latin-700.woff') format('woff'),
     url('./josefin-sans-v23-latin-700.ttf') format('truetype'),

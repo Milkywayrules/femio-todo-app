@@ -1,8 +1,8 @@
 const App = () => {
   return (
-    <div className="w-screen bg-gray-800 min-h-screen p-2 font-main">
+    <div className="min-h-screen w-screen bg-gray-l-100 p-2 font-main text-gray-l-500">
       <div className="w-20">
-        <p className="w-full text-center bg-blue-200 text-gray-700 rounded">Halo!</p>
+        <p className="bg-blue-200 text-gray-700 w-full rounded text-center">Halo!</p>
       </div>
     </div>
   )
