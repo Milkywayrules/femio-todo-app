@@ -1,15 +1,34 @@
+const colors = require('tailwindcss/colors')
+
 module.exports = {
   darkMode: 'class',
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
     fontFamily: {
-      main: ['Josefin Sans', 'sans-serif'],
+      main: [
+        'Josefin Sans',
+        'ui-sans-serif',
+        'system-ui',
+        '-apple-system',
+        'BlinkMacSystemFont',
+        '"Segoe UI"',
+        'Roboto',
+        '"Helvetica Neue"',
+        'Arial',
+        '"Noto Sans"',
+        'sans-serif',
+        '"Apple Color Emoji"',
+        '"Segoe UI Emoji"',
+        '"Segoe UI Symbol"',
+        '"Noto Color Emoji"',
+      ],
     },
     fontWeight: {
       normal: '400',
       bold: '700',
     },
     colors: {
+      white: colors.white,
       gray: {
         l: {
           100: 'hsl(0, 0%, 98%)',
@@ -32,6 +51,8 @@ module.exports = {
         'dark-desaturated': 'hsl(235, 24%, 19%)',
       },
       check: {
+        '1': 'hsl(192, 100%, 67%)',
+        '2': 'hsl(280, 87%, 65%)',
         'linear-gradient': 'hsl(192, 100%, 67%) to hsl(280, 87%, 65%)',
       },
     },
@@ -39,6 +60,9 @@ module.exports = {
       screens: {
         mobile: '375px',
         desktop: '1440px',
+      },
+      letterSpacing: {
+        title: '0.25em',
       },
     },
   },
