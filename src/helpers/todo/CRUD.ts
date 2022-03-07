@@ -1,5 +1,5 @@
 import { FilterOnState } from '@/components/FilterControl'
-import { Storage } from '@/helpers/Storage'
+import StorageDriver from '@/helpers/StorageDriver'
 import { Todo } from '@/helpers/todo'
 
 type TodoAdd = Required<Pick<Todo, 'todo'>> & Partial<Pick<Todo, 'isComplete'>>
@@ -61,7 +61,7 @@ export default class CRUD {
 
   private _todos: Todo[] = []
 
-  constructor(todoStorage: Storage, storageKey: string) {
+  constructor(todoStorage: StorageDriver, storageKey: string) {
     this._storage = todoStorage.getStorage()
     this._storageKey = storageKey
 

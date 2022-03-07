@@ -1,4 +1,4 @@
-export class Storage {
+export default class StorageDriver {
   private _driver: 'localStorage'
   private _storage
 

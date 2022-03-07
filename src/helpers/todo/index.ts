@@ -1,4 +1,4 @@
-import { Storage } from '@/helpers/Storage'
+import StorageDriver from '@/helpers/StorageDriver'
 import CRUD from '@/helpers/todo/CRUD'
 import Filter from '@/helpers/todo/Filter'
 
@@ -9,7 +9,7 @@ export interface Todo {
   createdAt: number
 }
 
-const storage = new Storage('localStorage')
+const storage = new StorageDriver('localStorage')
 
 const todo = {
   crud: new CRUD(storage, 'todo-app'),

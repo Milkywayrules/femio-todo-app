@@ -1,5 +1,5 @@
 import { FilterOnState } from '@/components/FilterControl'
-import { Storage } from '@/helpers/Storage'
+import StorageDriver from '@/helpers/StorageDriver'
 
 export default class Filter {
   private _storage
@@ -7,7 +7,7 @@ export default class Filter {
 
   private _filterSelected: FilterOnState['filterOn'] = 'all'
 
-  constructor(filterStorage: Storage, storageKey: string) {
+  constructor(filterStorage: StorageDriver, storageKey: string) {
     this._storage = filterStorage.getStorage()
     this._storageKey = storageKey
   }
