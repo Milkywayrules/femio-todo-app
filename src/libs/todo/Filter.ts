@@ -10,6 +10,8 @@ export default class Filter {
   constructor(filterStorage: StorageDriver, storageKey: string) {
     this._storage = filterStorage.getStorage()
     this._storageKey = storageKey
+
+    this.set(this._filterSelected)
   }
 
   public set(filter: FilterOnState['filterOn']) {
@@ -20,9 +22,8 @@ export default class Filter {
   }
 
   public get() {
-    const data = this._storage.getItem(this._storageKey) || 'all'
-    const filterSelected = data as FilterOnState['filterOn']
-    this._filterSelected = filterSelected
+    const data = this._storage.getItem(this._storageKey) || this._filterSelected
+    this._filterSelected = data as FilterOnState['filterOn']
 
     return this._filterSelected
   }
