@@ -10,6 +10,7 @@ import theme from '@/helpers/theme'
 import todo from '@/helpers/todo'
 import { Todo } from '@/libs/todo'
 import { FormEvent, Fragment, useEffect, useState } from 'react'
+import Icons from '@/assets/icons'
 
 const TODOS_DEFAULT = todo.crud.getAll()
 const FILTER_DEFAULT = todo.filter.get()
@@ -126,7 +127,7 @@ const App = () => {
                       </div>
 
                       <button className="shrink-0" onClick={() => handleTodoDelete(id)}>
-                        {<img src={crossIcon} alt="cross icon" className="h-3 w-3" />}
+                        <Icons.cross className="h-5 w-5 fill-gray-d-300" />
                       </button>
                     </div>
                   </Fragment>
