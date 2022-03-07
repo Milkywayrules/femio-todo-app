@@ -1,4 +1,3 @@
-import StorageDriver from '@/libs/StorageDriver'
 import CRUD from '@/libs/todo/CRUD'
 import Filter from '@/libs/todo/Filter'
 
@@ -9,11 +8,9 @@ export interface Todo {
   createdAt: number
 }
 
-const storage = new StorageDriver('localStorage')
-
-const todo = {
-  crud: new CRUD(storage, 'todo-app'),
-  filter: new Filter(storage, 'todo-app-filter'),
+const TodoLib = {
+  CRUD,
+  Filter,
 }
 
-export default todo
+export default TodoLib
