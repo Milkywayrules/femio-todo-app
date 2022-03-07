@@ -1,5 +1,5 @@
 import { FilterOnState } from '@/components/FilterControl'
-import StorageDriver from '@/helpers/StorageDriver'
+import StorageDriver from '@/libs/StorageDriver'
 
 export default class Filter {
   private _storage

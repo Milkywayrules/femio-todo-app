@@ -1,6 +1,6 @@
 import { FilterOnState } from '@/components/FilterControl'
-import StorageDriver from '@/helpers/StorageDriver'
-import { Todo } from '@/helpers/todo'
+import StorageDriver from '@/libs/StorageDriver'
+import { Todo } from '@/libs/todo'
 
 type TodoAdd = Required<Pick<Todo, 'todo'>> & Partial<Pick<Todo, 'isComplete'>>
 

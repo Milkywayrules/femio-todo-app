@@ -1,5 +1,5 @@
 import { FilterOnState } from '@/components/FilterControl'
-import todo, { Todo } from '@/helpers/todo'
+import todo, { Todo } from '@/libs/todo'
 import { Dispatch, SetStateAction } from 'react'
 
 interface Props {

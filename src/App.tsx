@@ -4,7 +4,7 @@ import moonIcon from '@/assets/icons/icon-moon.svg'
 import lightHeaderBG from '@/assets/images/bg-mobile-light.jpg'
 import FilterControl, { FilterOnState } from '@/components/FilterControl'
 import TodoContainer from '@/components/TodoCards'
-import todo, { Todo } from '@/helpers/todo'
+import todo, { Todo } from '@/libs/todo'
 import { FormEvent, Fragment, useEffect, useState } from 'react'
 
 const TODOS_DEFAULT = todo.crud.getAll()
