@@ -82,7 +82,7 @@ const App = () => {
             className="flex w-full items-center justify-between gap-3 overflow-hidden rounded bg-white py-3.5 px-4 text-sm dark:bg-gray-d-400"
             htmlFor="add-todo"
           >
-            <div className="h-5 w-5 shrink-0 rounded-full border border-gray-l-300"></div>
+            <div className="h-5 w-5 shrink-0 rounded-full border border-gray-l-300 dark:border-gray-d-300"></div>
 
             <form className="h-full w-full" onSubmit={handleTodoAdd}>
               <input
