@@ -3,7 +3,7 @@ import crossIcon from '@/assets/icons/icon-cross.svg'
 import moonIcon from '@/assets/icons/icon-moon.svg'
 import lightHeaderBG from '@/assets/images/bg-mobile-light.jpg'
 import FilterControl, { FilterOnState } from '@/components/FilterControl'
-import TodoCards from '@/components/TodoCards'
+import TodoContainer from '@/components/TodoCards'
 import todo, { Todo } from '@/helpers/todo'
 import { FormEvent, Fragment, useEffect, useState } from 'react'
 
@@ -80,7 +80,7 @@ const App = () => {
           </label>
 
           <div className="divide-y divide-gray-l-300 overflow-hidden rounded shadow-lg">
-            <TodoCards todos={todos} setTodos={setTodos}>
+            <TodoContainer todos={todos} setTodos={setTodos} filterOn={filterOn}>
               {({ id, isComplete, todo }) => {
                 let className = ''
                 let classNameP = 'text-gray-l-500'
@@ -114,7 +114,7 @@ const App = () => {
                   </Fragment>
                 )
               }}
-            </TodoCards>
+            </TodoContainer>
           </div>
 
           <FilterControl filterOn={filterOn} setFilterOn={setFilterOn} />

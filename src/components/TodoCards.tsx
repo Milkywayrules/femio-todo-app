@@ -1,15 +1,18 @@
+import { FilterOnState } from '@/components/FilterControl'
 import todo, { Todo } from '@/helpers/todo'
 import { Dispatch, SetStateAction } from 'react'
 
 interface Props {
   setTodos: Dispatch<SetStateAction<Todo[]>>
   todos: Todo[]
+  filterOn: FilterOnState['filterOn']
   children: (todo: Todo) => JSX.Element
 }
 
-const TodoCards = ({ todos, setTodos, children }: Props) => {
+const TodoContainer = ({ todos, setTodos, filterOn, children }: Props) => {
   const handleDeleteCompleted = () => {
-    setTodos(todo.crud.deleteCompleted())
+    todo.crud.deleteCompleted()
+    setTodos(todo.crud.filter(filterOn))
   }
 
   return (
@@ -24,4 +27,4 @@ const TodoCards = ({ todos, setTodos, children }: Props) => {
   )
 }
 
-export default TodoCards
+export default TodoContainer
