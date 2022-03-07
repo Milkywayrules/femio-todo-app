@@ -56,30 +56,30 @@ const DUMMY_TODO: Todo[] = [
 ]
 
 export default class CRUD {
-  private storage
-  private storageKey
+  private _storage
+  private _storageKey
 
-  private todos: Todo[] = []
+  private _todos: Todo[] = []
 
   constructor(todoStorage: Storage, storageKey: string) {
-    this.storage = todoStorage.getStorage()
-    this.storageKey = storageKey
+    this._storage = todoStorage.getStorage()
+    this._storageKey = storageKey
 
-    this.persistNewTodos(this.getAll())
+    this._persistNewTodos(this.getAll())
   }
 
-  private persistNewTodosToStorage(todos: Todo[]) {
-    this.storage.setItem(this.storageKey, JSON.stringify(todos))
+  private _persistNewTodosToStorage(todos: Todo[]) {
+    this._storage.setItem(this._storageKey, JSON.stringify(todos))
   }
 
-  private persistNewTodos(todos: Todo[] | Todo) {
+  private _persistNewTodos(todos: Todo[] | Todo) {
     if (Array.isArray(todos)) {
-      this.todos = todos
+      this._todos = todos
     } else {
-      this.todos.push(todos)
+      this._todos.push(todos)
     }
 
-    this.persistNewTodosToStorage(this.todos)
+    this._persistNewTodosToStorage(this._todos)
   }
 
   public add({ todo, isComplete = false }: TodoAdd) {
@@ -87,12 +87,12 @@ export default class CRUD {
     const createdAt = Date.now()
     const newTodo: Todo = { id, isComplete, todo, createdAt }
 
-    this.persistNewTodos(newTodo)
+    this._persistNewTodos(newTodo)
     return id
   }
 
   public getAll(): Todo[] | [] {
-    const data = this.storage.getItem(this.storageKey) || '[]'
+    const data = this._storage.getItem(this._storageKey) || '[]'
     const todos = JSON.parse(data) as Todo[] | []
 
     return todos
@@ -115,29 +115,29 @@ export default class CRUD {
       isComplete: todo.id === id ? !todo.isComplete : todo.isComplete,
     }))
 
-    this.persistNewTodos(newTodos)
-    return this.todos
+    this._persistNewTodos(newTodos)
+    return this._todos
   }
 
   public delete(id: Todo['id']) {
     const todos = this.getAll()
     const newTodos = todos.filter(todo => todo.id !== id)
 
-    this.persistNewTodos(newTodos)
-    return this.todos
+    this._persistNewTodos(newTodos)
+    return this._todos
   }
 
   public deleteCompleted() {
     const todos = this.getAll()
     const newTodos = todos.filter(todo => !todo.isComplete)
 
-    this.persistNewTodos(newTodos)
-    return this.todos
+    this._persistNewTodos(newTodos)
+    return this._todos
   }
 
   public deleteAll() {
-    this.persistNewTodos([])
-    return this.todos
+    this._persistNewTodos([])
+    return this._todos
   }
 
   public filter(filter: FilterOnState['filterOn']) {

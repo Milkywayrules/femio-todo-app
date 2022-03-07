@@ -2,28 +2,28 @@ import { FilterOnState } from '@/components/FilterControl'
 import { Storage } from '@/helpers/Storage'
 
 export default class Filter {
-  private storage
-  private storageKey
+  private _storage
+  private _storageKey
 
-  private filterSelected: FilterOnState['filterOn'] = 'all'
+  private _filterSelected: FilterOnState['filterOn'] = 'all'
 
   constructor(filterStorage: Storage, storageKey: string) {
-    this.storage = filterStorage.getStorage()
-    this.storageKey = storageKey
+    this._storage = filterStorage.getStorage()
+    this._storageKey = storageKey
   }
 
   public set(filter: FilterOnState['filterOn']) {
-    this.filterSelected = filter
-    this.storage.setItem(this.storageKey, this.filterSelected)
+    this._filterSelected = filter
+    this._storage.setItem(this._storageKey, this._filterSelected)
 
     return this
   }
 
   public get() {
-    const data = this.storage.getItem(this.storageKey) || 'all'
+    const data = this._storage.getItem(this._storageKey) || 'all'
     const filterSelected = data as FilterOnState['filterOn']
-    this.filterSelected = filterSelected
+    this._filterSelected = filterSelected
 
-    return this.filterSelected
+    return this._filterSelected
   }
 }

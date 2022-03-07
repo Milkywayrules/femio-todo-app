@@ -1,21 +1,21 @@
 export class Storage {
-  private driver: 'localStorage'
-  private storage
+  private _driver: 'localStorage'
+  private _storage
 
   constructor(driver: 'localStorage' = 'localStorage') {
-    this.driver = driver
-    this.storage = window[this.driver]
+    this._driver = driver
+    this._storage = window[this._driver]
   }
 
-  setDriver(driver: 'localStorage' = 'localStorage') {
-    this.driver = driver
+  public setDriver(driver: 'localStorage' = 'localStorage') {
+    this._driver = driver
   }
 
-  getDriver() {
-    return this.driver
+  public getDriver() {
+    return this._driver
   }
 
-  getStorage() {
-    return this.storage
+  public getStorage() {
+    return this._storage
   }
 }
