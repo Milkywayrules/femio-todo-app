@@ -12,7 +12,7 @@ const FilterControl = ({ filterOn, setFilterOn }: FilterOnState) => {
   }
 
   return (
-    <div className="flex w-full items-center justify-center gap-5 overflow-hidden rounded bg-white py-3.5 px-4 text-sm text-gray-l-400 shadow-md">
+    <div className="flex w-full items-center justify-center gap-5 overflow-hidden rounded bg-white py-3.5 px-4 text-sm text-gray-l-400 shadow-md dark:bg-gray-d-400">
       <button
         onClick={() => handleFilterSelect('all')}
         className={`font-bold ${filterOn === 'all' ? 'text-blue-bright' : ''}`}
