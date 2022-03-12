@@ -2,9 +2,8 @@ import Icons from '@/assets/icons'
 import checkIcon from '@/assets/icons/icon-check.svg'
 import moonIcon from '@/assets/icons/icon-moon.svg'
 import sunIcon from '@/assets/icons/icon-sun.svg'
-import darkHeaderBG from '@/assets/images/bg-mobile-dark.jpg'
-import lightHeaderBG from '@/assets/images/bg-mobile-light.jpg'
 import { FilterOnState } from '@/components/FilterControl'
+import HeaderBannerImage from '@/components/HeaderBannerImage'
 import TodoContainer from '@/components/TodoContainer'
 import theme from '@/helpers/theme'
 import todo from '@/helpers/todo'
@@ -51,17 +50,10 @@ const App = () => {
 
   return (
     <div className="min-h-screen w-screen bg-gray-l-100 font-main text-gray-l-500 dark:bg-blue-dark-desaturated dark:text-white">
-      {/* bg banner image */}
-      <div className="absolute">
-        {isDarkMode ? (
-          <img src={darkHeaderBG} alt="Dark Header Banner Image" className="" />
-        ) : (
-          <img src={lightHeaderBG} alt="Light Header Banner Image" className="" />
-        )}
-      </div>
+      <HeaderBannerImage isDarkMode={isDarkMode} />
 
       {/* content */}
-      <div className="relative flex flex-col gap-7 px-6 py-11">
+      <div className="relative mx-auto flex max-w-[39rem] flex-col gap-7 px-6 py-11 desktop:py-20">
         {/* header */}
         <header className="flex items-center justify-between">
           <h1 className="text-3xl font-bold tracking-title text-gray-l-100">TODO</h1>

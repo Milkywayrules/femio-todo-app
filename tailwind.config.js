@@ -64,6 +64,12 @@ module.exports = {
       letterSpacing: {
         title: '0.25em',
       },
+      backgroundImage: {
+        'mobile-darkHeader': 'url(/src/assets/images/bg-mobile-dark.jpg)',
+        'mobile-lightHeader': 'url(/src/assets/images/bg-mobile-light.jpg)',
+        'desktop-darkHeader': 'url(/src/assets/images/bg-desktop-dark.jpg)',
+        'desktop-lightHeader': 'url(/src/assets/images/bg-desktop-light.jpg)',
+      },
     },
   },
   plugins: [],
