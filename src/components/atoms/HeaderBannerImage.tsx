@@ -9,13 +9,13 @@ const HeaderBannerImage = ({ isDarkMode }: Props) => {
         {isDarkMode ? (
           <div
             className={
-              'h-[12.5rem] bg-mobile-darkHeader bg-cover desktop:h-64 desktop:bg-desktop-darkHeader'
+              'h-[12.5rem] bg-mobile-darkHeader bg-cover desktop:h-72 desktop:bg-desktop-darkHeader'
             }
           />
         ) : (
           <div
             className={
-              'h-[12.5rem] bg-mobile-lightHeader bg-cover desktop:h-64 desktop:bg-desktop-lightHeader'
+              'h-[12.5rem] bg-mobile-lightHeader bg-cover desktop:h-72 desktop:bg-desktop-lightHeader'
             }
           />
         )}

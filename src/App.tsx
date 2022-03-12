@@ -51,11 +51,11 @@ const App = () => {
   }
 
   return (
-    <div className="min-h-screen w-screen bg-gray-l-100 font-main text-sm text-gray-l-500 dark:bg-blue-dark-desaturated dark:text-white desktop:text-lg">
+    <div className="min-h-screen w-screen bg-gray-l-100 font-main text-gray-l-500 dark:bg-blue-dark-desaturated dark:text-white">
       <HeaderBannerImage isDarkMode={isDarkMode} />
 
       {/* content */}
-      <div className="relative mx-auto flex max-w-[39rem] flex-col gap-7 px-6 py-11 desktop:py-20">
+      <div className="relative mx-auto flex max-w-[40rem] flex-col gap-7 px-6 py-11 desktop:gap-10 desktop:py-20">
         {/* header */}
         <header className="flex items-center justify-between">
           <SiteTitle text="TODO" />
@@ -76,7 +76,7 @@ const App = () => {
           >
             <div className="h-5 w-5 shrink-0 rounded-full border border-gray-l-300 dark:border-gray-d-300"></div>
 
-            <form className="h-full w-full" onSubmit={handleTodoAdd}>
+            <form className="h-full w-full desktop:text-lg" onSubmit={handleTodoAdd}>
               <input
                 className="h-full w-full outline-none dark:bg-gray-d-400 dark:text-white"
                 type="text"
@@ -112,11 +112,11 @@ const App = () => {
                       >
                         {isComplete && <img src={checkIcon} alt="check icon" className="h-2 w-2" />}
                       </div>
-                      <p className={`h-full w-full ${classNameP}`}>{todo}</p>
+                      <p className={`h-full w-full text-lg ${classNameP}`}>{todo}</p>
                     </div>
 
                     <button className="shrink-0" onClick={() => handleTodoDelete(id)}>
-                      <Icons.cross className="h-5 w-5 fill-gray-d-300" />
+                      <Icons.cross className="h-5 w-5 fill-gray-d-300/50" />
                     </button>
                   </div>
                 </Fragment>
