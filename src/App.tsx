@@ -1,9 +1,11 @@
 import Icons from '@/assets/icons'
 import checkIcon from '@/assets/icons/icon-check.svg'
-import ButtonDarkMode from '@/components/atoms/ButtonDarkMode'
-import { FilterOnState } from '@/components/FilterControl'
+import ButtonToggle from '@/components/atoms/ButtonToggle'
 import HeaderBannerImage from '@/components/atoms/HeaderBannerImage'
+import MoonIcon from '@/components/atoms/MoonIcon'
 import SiteTitle from '@/components/atoms/SiteTitle'
+import SunIcon from '@/components/atoms/SunIcon'
+import { FilterOnState } from '@/components/FilterControl'
 import TodoContainer from '@/components/TodoContainer'
 import theme from '@/helpers/theme'
 import todo from '@/helpers/todo'
@@ -43,6 +45,11 @@ const App = () => {
     setTodos(todo.crud.filter(filterOn))
   }
 
+  const handleToggleDarkMode = () => {
+    theme.toggleDarkMode()
+    setIsDarkMode(theme.getIsDarkMode())
+  }
+
   return (
     <div className="min-h-screen w-screen bg-gray-l-100 font-main text-sm text-gray-l-500 dark:bg-blue-dark-desaturated dark:text-white desktop:text-lg">
       <HeaderBannerImage isDarkMode={isDarkMode} />
@@ -52,7 +59,12 @@ const App = () => {
         {/* header */}
         <header className="flex items-center justify-between">
           <SiteTitle text="TODO" />
-          <ButtonDarkMode darkModeState={[isDarkMode, setIsDarkMode]} />
+          <ButtonToggle
+            isOn={isDarkMode}
+            iconOn={<SunIcon />}
+            iconOff={<MoonIcon />}
+            handleToggle={handleToggleDarkMode}
+          />
         </header>
 
         {/* body */}
