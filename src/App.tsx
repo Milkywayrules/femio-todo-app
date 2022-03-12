@@ -98,45 +98,39 @@ const App = () => {
             </form>
           </label>
 
-          <div className="divide-y divide-gray-l-300 overflow-hidden rounded shadow-lg dark:divide-gray-d-300">
-            <TodoContainer todos={todos} setTodos={setTodos} filterOn={filterOn}>
-              {({ id, isComplete, todo }) => {
-                let className = ''
-                let classNameP = 'text-gray-l-500 dark:text-gray-d-100'
+          <TodoContainer todosState={[todos, setTodos]} filterState={[filterOn, setFilterOn]}>
+            {({ id, isComplete, todo }) => {
+              let className = ''
+              let classNameP = 'text-gray-l-500 dark:text-gray-d-100'
 
-                if (isComplete) {
-                  className = 'bg-gradient-to-br from-check-1 to-check-2'
-                  classNameP = 'line-through text-gray-l-300 dark:text-gray-d-300'
-                }
+              if (isComplete) {
+                className = 'bg-gradient-to-br from-check-1 to-check-2'
+                classNameP = 'line-through text-gray-l-300 dark:text-gray-d-300'
+              }
 
-                return (
-                  <Fragment key={id}>
-                    <div className="flex w-full items-center justify-between gap-3 overflow-hidden bg-white py-3.5 px-4 text-sm dark:bg-gray-d-400">
+              return (
+                <Fragment key={id}>
+                  <div className="flex w-full items-center justify-between gap-3 overflow-hidden bg-white py-3.5 px-4 text-sm dark:bg-gray-d-400">
+                    <div
+                      className="flex w-full items-center gap-3"
+                      onClick={() => handleTodoComplete(id)}
+                    >
                       <div
-                        className="flex w-full items-center gap-3"
-                        onClick={() => handleTodoComplete(id)}
+                        className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-gray-l-300 dark:border-gray-d-300 ${className}`}
                       >
-                        <div
-                          className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-gray-l-300 dark:border-gray-d-300 ${className}`}
-                        >
-                          {isComplete && (
-                            <img src={checkIcon} alt="check icon" className="h-2 w-2" />
-                          )}
-                        </div>
-                        <p className={`h-full w-full ${classNameP}`}>{todo}</p>
+                        {isComplete && <img src={checkIcon} alt="check icon" className="h-2 w-2" />}
                       </div>
-
-                      <button className="shrink-0" onClick={() => handleTodoDelete(id)}>
-                        <Icons.cross className="h-5 w-5 fill-gray-d-300" />
-                      </button>
+                      <p className={`h-full w-full ${classNameP}`}>{todo}</p>
                     </div>
-                  </Fragment>
-                )
-              }}
-            </TodoContainer>
-          </div>
 
-          <FilterControl filterOn={filterOn} setFilterOn={setFilterOn} />
+                    <button className="shrink-0" onClick={() => handleTodoDelete(id)}>
+                      <Icons.cross className="h-5 w-5 fill-gray-d-300" />
+                    </button>
+                  </div>
+                </Fragment>
+              )
+            }}
+          </TodoContainer>
         </main>
 
         {/* footer */}
