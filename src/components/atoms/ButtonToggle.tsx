@@ -6,7 +6,14 @@ interface Props {
 }
 
 const ButtonToggle = ({ isOn, iconOn, iconOff, handleToggle }: Props) => {
-  return <button onClick={handleToggle}>{isOn ? iconOn : iconOff}</button>
+  return (
+    <button
+      className="rounded border-[1px] border-transparent p-1 outline-none focus-visible:border-white"
+      onClick={handleToggle}
+    >
+      {isOn ? iconOn : iconOff}
+    </button>
+  )
 }
 
 export default ButtonToggle

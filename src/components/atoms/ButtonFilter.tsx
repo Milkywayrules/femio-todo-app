@@ -14,7 +14,7 @@ const ButtonFilter: FC<PropsButtonFilter> = ({
 }) => {
   const filterOnClassName1 = 'text-blue-bright'
   const filterOnClassName2 =
-    'hover:text-gray-l-500 focus-visible:text-gray-l-500 dark:hover:text-gray-d-200 dark:focus-visible:text-gray-d-200'
+    'hover:text-gray-l-500 active:text-gray-l-500/50 dark:hover:text-gray-d-200 dark:active:text-gray-d-200/50 dark'
 
   return (
     <button

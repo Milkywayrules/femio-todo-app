@@ -132,7 +132,7 @@ const App = () => {
                     </div>
 
                     <button
-                      className="shrink-0 rounded outline-none hover:bg-gray-l-200 focus-visible:bg-gray-l-200 active:bg-gray-l-200/50 dark:hover:bg-gray-d-500/50 dark:focus-visible:bg-gray-d-500/50 dark:active:bg-gray-d-500"
+                      className="shrink-0 rounded border-[1px] border-transparent outline-none hover:bg-gray-l-200 focus-visible:border-blue-bright active:bg-gray-l-200/50 dark:hover:bg-gray-d-500/50 dark:active:bg-gray-d-500"
                       onClick={() => handleTodoDelete(id)}
                     >
                       <Icons.cross className="h-5 w-5 fill-gray-d-300/50 dark:fill-gray-d-300" />
