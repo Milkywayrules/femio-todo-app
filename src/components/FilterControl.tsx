@@ -4,11 +4,14 @@ import { Dispatch, SetStateAction } from 'react'
 export interface FilterOnState {
   filterOn: 'all' | 'active' | 'completed'
   setFilterOn: Dispatch<SetStateAction<FilterOnState['filterOn']>>
+}
+
+interface PropsFilterControl extends FilterOnState {
   hideOn?: 'mobile' | 'desktop'
   className?: string
 }
 
-const FilterControl = ({ filterOn, setFilterOn, hideOn, className = '' }: FilterOnState) => {
+const FilterControl = ({ filterOn, setFilterOn, hideOn, className = '' }: PropsFilterControl) => {
   const hideOnClassName =
     hideOn === 'desktop'
       ? 'flex desktop:hidden'
