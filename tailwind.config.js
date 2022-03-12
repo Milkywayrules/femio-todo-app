@@ -28,6 +28,7 @@ module.exports = {
       bold: '700',
     },
     colors: {
+      transparent: colors.transparent,
       white: colors.white,
       gray: {
         l: {
