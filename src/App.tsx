@@ -1,16 +1,15 @@
+import Icons from '@/assets/icons'
 import checkIcon from '@/assets/icons/icon-check.svg'
-import crossIcon from '@/assets/icons/icon-cross.svg'
 import moonIcon from '@/assets/icons/icon-moon.svg'
 import sunIcon from '@/assets/icons/icon-sun.svg'
-import lightHeaderBG from '@/assets/images/bg-mobile-light.jpg'
 import darkHeaderBG from '@/assets/images/bg-mobile-dark.jpg'
-import FilterControl, { FilterOnState } from '@/components/FilterControl'
+import lightHeaderBG from '@/assets/images/bg-mobile-light.jpg'
+import { FilterOnState } from '@/components/FilterControl'
 import TodoContainer from '@/components/TodoContainer'
 import theme from '@/helpers/theme'
 import todo from '@/helpers/todo'
 import { Todo } from '@/libs/todo'
 import { FormEvent, Fragment, useEffect, useState } from 'react'
-import Icons from '@/assets/icons'
 
 const TODOS_DEFAULT = todo.crud.getAll()
 const FILTER_DEFAULT = todo.filter.get()
@@ -55,7 +54,7 @@ const App = () => {
       {/* bg banner image */}
       <div className="absolute">
         {isDarkMode ? (
-          <img src={darkHeaderBG} alt="Light Header Banner Image" className="" />
+          <img src={darkHeaderBG} alt="Dark Header Banner Image" className="" />
         ) : (
           <img src={lightHeaderBG} alt="Light Header Banner Image" className="" />
         )}
