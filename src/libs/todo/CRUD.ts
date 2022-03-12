@@ -1,6 +1,6 @@
-import { FilterOnState } from '@/components/FilterControl'
 import StorageDriver from '@/libs/StorageDriver'
 import { Todo } from '@/libs/todo'
+import { FilterOnType } from '@/libs/todo/Filter'
 
 type TodoAdd = Required<Pick<Todo, 'todo'>> & Partial<Pick<Todo, 'isComplete'>>
 
@@ -140,7 +140,7 @@ export default class CRUD {
     return this._todos
   }
 
-  public filter(filter: FilterOnState['filterOn']) {
+  public filter(filter: FilterOnType) {
     const todos = this.getAll()
 
     if (filter === 'all') {

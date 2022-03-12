@@ -1,15 +1,15 @@
-import { FilterOnState } from '@/components/FilterControl'
 import todo from '@/helpers/todo'
+import { FilterOnType } from '@/libs/todo/Filter'
 import { Dispatch, FC, SetStateAction } from 'react'
 
 interface PropsButtonFilter {
-  filterState: [FilterOnState['filterOn'], Dispatch<SetStateAction<FilterOnState['filterOn']>>]
-  filterType: FilterOnState['filterOn']
+  filterState: [FilterOnType, Dispatch<SetStateAction<FilterOnType>>]
+  filterOnType: FilterOnType
 }
 
 const ButtonFilter: FC<PropsButtonFilter> = ({
   filterState: [filterOn, setFilterOn],
-  filterType,
+  filterOnType,
   children,
 }) => {
   const filterOnClassName1 = 'text-blue-bright'
@@ -18,9 +18,9 @@ const ButtonFilter: FC<PropsButtonFilter> = ({
 
   return (
     <button
-      onClick={() => setFilterOn(todo.filter.set(filterType).get())}
+      onClick={() => setFilterOn(todo.filter.set(filterOnType).get())}
       className={`rounded border-[1px] border-transparent px-1 font-bold outline-none focus-visible:border-blue-bright ${
-        filterOn === filterType ? filterOnClassName1 : filterOnClassName2
+        filterOn === filterOnType ? filterOnClassName1 : filterOnClassName2
       }`}
     >
       {children}

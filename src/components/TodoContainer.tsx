@@ -1,11 +1,12 @@
-import FilterControl, { FilterOnState } from '@/components/FilterControl'
+import FilterControl from '@/components/FilterControl'
 import todo from '@/helpers/todo'
 import { Todo } from '@/libs/todo'
+import { FilterOnType } from '@/libs/todo/Filter'
 import { Dispatch, SetStateAction } from 'react'
 
 interface Props {
   todosState: [Todo[], Dispatch<SetStateAction<Todo[]>>]
-  filterState: [FilterOnState['filterOn'], Dispatch<SetStateAction<FilterOnState['filterOn']>>]
+  filterState: [FilterOnType, Dispatch<SetStateAction<FilterOnType>>]
   children: (todo: Todo) => JSX.Element
 }
 

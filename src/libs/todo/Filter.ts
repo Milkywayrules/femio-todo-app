@@ -1,11 +1,18 @@
-import { FilterOnState } from '@/components/FilterControl'
 import StorageDriver from '@/libs/StorageDriver'
+import { Dispatch, SetStateAction } from 'react'
+
+export type FilterOnType = 'all' | 'active' | 'completed'
+
+export interface FilterOnState {
+  filterOn: FilterOnType
+  setFilterOn: Dispatch<SetStateAction<FilterOnType>>
+}
 
 export default class Filter {
   private _storage
   private _storageKey
 
-  private _filterSelected: FilterOnState['filterOn'] = 'all'
+  private _filterSelected: FilterOnType = 'all'
 
   constructor(filterStorage: StorageDriver, storageKey: string) {
     this._storage = filterStorage.getStorage()
@@ -14,7 +21,7 @@ export default class Filter {
     this.set(this._filterSelected)
   }
 
-  public set(filter: FilterOnState['filterOn']) {
+  public set(filter: FilterOnType) {
     this._filterSelected = filter
     this._storage.setItem(this._storageKey, this._filterSelected)
 
@@ -23,7 +30,7 @@ export default class Filter {
 
   public get() {
     const data = this._storage.getItem(this._storageKey) || this._filterSelected
-    this._filterSelected = data as FilterOnState['filterOn']
+    this._filterSelected = data as FilterOnType
 
     return this._filterSelected
   }

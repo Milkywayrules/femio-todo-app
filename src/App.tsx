@@ -5,18 +5,18 @@ import HeaderBannerImage from '@/components/atoms/HeaderBannerImage'
 import MoonIcon from '@/components/atoms/MoonIcon'
 import SiteTitle from '@/components/atoms/SiteTitle'
 import SunIcon from '@/components/atoms/SunIcon'
-import { FilterOnState } from '@/components/FilterControl'
 import TodoContainer from '@/components/TodoContainer'
 import theme from '@/helpers/theme'
 import todo from '@/helpers/todo'
 import { Todo } from '@/libs/todo'
+import { FilterOnType } from '@/libs/todo/Filter'
 import { FormEvent, Fragment, useEffect, useState } from 'react'
 
 const TODOS_DEFAULT = todo.crud.getAll()
 const FILTER_DEFAULT = todo.filter.get()
 
 const App = () => {
-  const [filterOn, setFilterOn] = useState<FilterOnState['filterOn']>(FILTER_DEFAULT)
+  const [filterOn, setFilterOn] = useState<FilterOnType>(FILTER_DEFAULT)
   const [todos, setTodos] = useState<Todo[]>(TODOS_DEFAULT)
   const [newTodo, setNewTodo] = useState('')
   const [isDarkMode, setIsDarkMode] = useState(theme.getIsDarkMode())

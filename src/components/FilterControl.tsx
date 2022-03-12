@@ -1,10 +1,5 @@
 import ButtonFilter from '@/components/atoms/ButtonFilter'
-import { Dispatch, SetStateAction } from 'react'
-
-export interface FilterOnState {
-  filterOn: 'all' | 'active' | 'completed'
-  setFilterOn: Dispatch<SetStateAction<FilterOnState['filterOn']>>
-}
+import { FilterOnState } from '@/libs/todo/Filter'
 
 interface PropsFilterControl extends FilterOnState {
   hideOn?: 'mobile' | 'desktop'
@@ -23,13 +18,13 @@ const FilterControl = ({ filterOn, setFilterOn, hideOn, className = '' }: PropsF
     <div
       className={`w-full items-center justify-center gap-5 overflow-hidden rounded bg-white text-sm text-gray-l-400 dark:bg-gray-d-400 ${className} ${hideOnClassName}`}
     >
-      <ButtonFilter filterType="all" filterState={[filterOn, setFilterOn]}>
+      <ButtonFilter filterOnType="all" filterState={[filterOn, setFilterOn]}>
         All
       </ButtonFilter>
-      <ButtonFilter filterType="active" filterState={[filterOn, setFilterOn]}>
+      <ButtonFilter filterOnType="active" filterState={[filterOn, setFilterOn]}>
         Active
       </ButtonFilter>
-      <ButtonFilter filterType="completed" filterState={[filterOn, setFilterOn]}>
+      <ButtonFilter filterOnType="completed" filterState={[filterOn, setFilterOn]}>
         Completed
       </ButtonFilter>
     </div>
