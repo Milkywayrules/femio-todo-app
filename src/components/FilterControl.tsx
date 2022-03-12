@@ -1,4 +1,4 @@
-import todo from '@/helpers/todo'
+import ButtonFilter from '@/components/atoms/ButtonFilter'
 import { Dispatch, SetStateAction } from 'react'
 
 export interface FilterOnState {
@@ -9,10 +9,6 @@ export interface FilterOnState {
 }
 
 const FilterControl = ({ filterOn, setFilterOn, hideOn, className = '' }: FilterOnState) => {
-  const handleFilterSelect = (filterOn: FilterOnState['filterOn']) => {
-    setFilterOn(todo.filter.set(filterOn).get())
-  }
-
   const hideOnClassName =
     hideOn === 'desktop'
       ? 'flex desktop:hidden'
@@ -24,24 +20,15 @@ const FilterControl = ({ filterOn, setFilterOn, hideOn, className = '' }: Filter
     <div
       className={`w-full items-center justify-center gap-5 overflow-hidden rounded bg-white text-sm text-gray-l-400 dark:bg-gray-d-400 ${className} ${hideOnClassName}`}
     >
-      <button
-        onClick={() => handleFilterSelect('all')}
-        className={`font-bold ${filterOn === 'all' ? 'text-blue-bright' : ''}`}
-      >
+      <ButtonFilter filterType="all" filterState={[filterOn, setFilterOn]}>
         All
-      </button>
-      <button
-        onClick={() => handleFilterSelect('active')}
-        className={`font-bold ${filterOn === 'active' ? 'text-blue-bright' : ''}`}
-      >
+      </ButtonFilter>
+      <ButtonFilter filterType="active" filterState={[filterOn, setFilterOn]}>
         Active
-      </button>
-      <button
-        onClick={() => handleFilterSelect('completed')}
-        className={`font-bold ${filterOn === 'completed' ? 'text-blue-bright' : ''}`}
-      >
+      </ButtonFilter>
+      <ButtonFilter filterType="completed" filterState={[filterOn, setFilterOn]}>
         Completed
-      </button>
+      </ButtonFilter>
     </div>
   )
 }
