@@ -1,9 +1,9 @@
 import Icons from '@/assets/icons'
 import checkIcon from '@/assets/icons/icon-check.svg'
-import moonIcon from '@/assets/icons/icon-moon.svg'
-import sunIcon from '@/assets/icons/icon-sun.svg'
+import ButtonDarkMode from '@/components/atoms/ButtonDarkMode'
 import { FilterOnState } from '@/components/FilterControl'
-import HeaderBannerImage from '@/components/HeaderBannerImage'
+import HeaderBannerImage from '@/components/atoms/HeaderBannerImage'
+import SiteTitle from '@/components/atoms/SiteTitle'
 import TodoContainer from '@/components/TodoContainer'
 import theme from '@/helpers/theme'
 import todo from '@/helpers/todo'
@@ -43,27 +43,16 @@ const App = () => {
     setTodos(todo.crud.filter(filterOn))
   }
 
-  const handleToggleDarkMode = () => {
-    theme.toggleDarkMode()
-    setIsDarkMode(theme.getIsDarkMode())
-  }
-
   return (
-    <div className="min-h-screen w-screen bg-gray-l-100 font-main text-gray-l-500 dark:bg-blue-dark-desaturated dark:text-white">
+    <div className="min-h-screen w-screen bg-gray-l-100 font-main text-sm text-gray-l-500 dark:bg-blue-dark-desaturated dark:text-white desktop:text-lg">
       <HeaderBannerImage isDarkMode={isDarkMode} />
 
       {/* content */}
       <div className="relative mx-auto flex max-w-[39rem] flex-col gap-7 px-6 py-11 desktop:py-20">
         {/* header */}
         <header className="flex items-center justify-between">
-          <h1 className="text-3xl font-bold tracking-title text-gray-l-100">TODO</h1>
-          <button onClick={handleToggleDarkMode}>
-            {isDarkMode ? (
-              <img src={sunIcon} alt="Sun Icon" className="h-5 w-5" />
-            ) : (
-              <img src={moonIcon} alt="Moon Icon" className="h-5 w-5" />
-            )}
-          </button>
+          <SiteTitle text="TODO" />
+          <ButtonDarkMode darkModeState={[isDarkMode, setIsDarkMode]} />
         </header>
 
         {/* body */}
