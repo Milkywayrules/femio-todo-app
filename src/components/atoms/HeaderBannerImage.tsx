@@ -1,8 +1,9 @@
-interface Props {
-  isDarkMode: boolean
-}
+import store from '@/store'
+import { useAtomValue } from 'jotai'
 
-const HeaderBannerImage = ({ isDarkMode }: Props) => {
+const HeaderBannerImage = () => {
+  const isDarkMode = useAtomValue(store.darkModeAtom)
+
   return (
     <>
       <div className="absolute h-20 w-screen">

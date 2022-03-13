@@ -20,7 +20,7 @@ const FILTER_DEFAULT = todo.filter.get()
 const App = () => {
   const [filterOn, setFilterOn] = useState<FilterOnType>(FILTER_DEFAULT)
   const [todos, setTodos] = useAtom(store.todoAtom)
-  const [isDarkMode, setIsDarkMode] = useState(theme.getIsDarkMode())
+  const [isDarkMode, setIsDarkMode] = useAtom(store.darkModeAtom)
 
   // refilter when filter changes
   useEffect(() => {
@@ -44,7 +44,7 @@ const App = () => {
 
   return (
     <div className="min-h-screen w-screen bg-gray-l-100 font-main text-gray-l-500 dark:bg-blue-dark-desaturated dark:text-white">
-      <HeaderBannerImage isDarkMode={isDarkMode} />
+      <HeaderBannerImage />
 
       {/* content */}
       <div className="relative mx-auto flex max-w-[40rem] flex-col gap-7 px-6 py-11 desktop:gap-10 desktop:py-20">
