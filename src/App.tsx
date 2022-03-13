@@ -5,35 +5,27 @@ import HeaderBannerImage from '@/components/atoms/HeaderBannerImage'
 import MoonIcon from '@/components/atoms/MoonIcon'
 import SiteTitle from '@/components/atoms/SiteTitle'
 import SunIcon from '@/components/atoms/SunIcon'
+import InputTodo from '@/components/molecules/InputTodo'
 import TodoContainer from '@/components/TodoContainer'
 import theme from '@/helpers/theme'
 import todo from '@/helpers/todo'
 import { Todo } from '@/libs/todo'
 import { FilterOnType } from '@/libs/todo/Filter'
-import { FormEvent, Fragment, useEffect, useState } from 'react'
+import store from '@/store'
+import { useAtom } from 'jotai'
+import { Fragment, useEffect, useState } from 'react'
 
-const TODOS_DEFAULT = todo.crud.getAll()
 const FILTER_DEFAULT = todo.filter.get()
 
 const App = () => {
   const [filterOn, setFilterOn] = useState<FilterOnType>(FILTER_DEFAULT)
-  const [todos, setTodos] = useState<Todo[]>(TODOS_DEFAULT)
-  const [newTodo, setNewTodo] = useState('')
+  const [todos, setTodos] = useAtom(store.todoAtom)
   const [isDarkMode, setIsDarkMode] = useState(theme.getIsDarkMode())
 
   // refilter when filter changes
   useEffect(() => {
     setTodos(todo.crud.filter(filterOn))
   }, [filterOn])
-
-  const handleTodoAdd = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    if (!newTodo) return
-
-    todo.crud.add({ todo: newTodo })
-    setTodos(todo.crud.getAll())
-    setNewTodo('')
-  }
 
   const handleTodoComplete = (id: Todo['id']) => {
     todo.crud.toggleComplete(id)
@@ -69,26 +61,7 @@ const App = () => {
 
         {/* body */}
         <main className="flex flex-col gap-5">
-          {/* input form */}
-          <label
-            className="flex w-full items-center justify-between gap-3 overflow-hidden rounded bg-white py-3.5 px-4 text-sm dark:bg-gray-d-400"
-            htmlFor="add-todo"
-          >
-            <div className="h-5 w-5 shrink-0 rounded-full border border-gray-l-300 dark:border-gray-d-300"></div>
-
-            <form className="h-full w-full desktop:text-lg" onSubmit={handleTodoAdd}>
-              <input
-                className="h-full w-full outline-none dark:bg-gray-d-400 dark:text-white"
-                type="text"
-                name="addTodo"
-                id="add-todo"
-                placeholder="Create a new todo..."
-                value={newTodo}
-                onChange={e => setNewTodo(e.currentTarget.value)}
-                minLength={3}
-              />
-            </form>
-          </label>
+          <InputTodo />
 
           <TodoContainer todosState={[todos, setTodos]} filterState={[filterOn, setFilterOn]}>
             {({ id, isComplete, todo }) => {
