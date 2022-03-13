@@ -8,16 +8,14 @@ import TodoItem from '@/components/molecules/TodoItem'
 import TodoContainer from '@/components/TodoContainer'
 import theme from '@/helpers/theme'
 import todo from '@/helpers/todo'
-import { FilterOnType } from '@/libs/todo/Filter'
 import store from '@/store'
-import { useAtom } from 'jotai'
-import { useEffect, useState } from 'react'
-
-const FILTER_DEFAULT = todo.filter.get()
+import { useAtom, useAtomValue } from 'jotai'
+import { useUpdateAtom } from 'jotai/utils'
+import { useEffect } from 'react'
 
 const App = () => {
-  const [filterOn, setFilterOn] = useState<FilterOnType>(FILTER_DEFAULT)
-  const [todos, setTodos] = useAtom(store.todo.todoAtom)
+  const filterOn = useAtomValue(store.todo.filterOnAtom)
+  const setTodos = useUpdateAtom(store.todo.todoAtom)
   const [isDarkMode, setIsDarkMode] = useAtom(store.theme.darkModeAtom)
 
   // refilter when filter changes
@@ -51,7 +49,7 @@ const App = () => {
         <main className="flex flex-col gap-5">
           <InputTodo />
 
-          <TodoContainer todosState={[todos, setTodos]} filterState={[filterOn, setFilterOn]}>
+          <TodoContainer>
             {todoProps => <TodoItem {...todoProps} filterOn={filterOn} />}
           </TodoContainer>
         </main>

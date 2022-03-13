@@ -1,20 +1,17 @@
 import FilterControl from '@/components/FilterControl'
 import todo from '@/helpers/todo'
 import { Todo } from '@/libs/todo'
-import { FilterOnType } from '@/libs/todo/Filter'
-import { Dispatch, SetStateAction } from 'react'
+import store from '@/store'
+import { useAtom } from 'jotai'
 
 interface Props {
-  todosState: [Todo[], Dispatch<SetStateAction<Todo[]>>]
-  filterState: [FilterOnType, Dispatch<SetStateAction<FilterOnType>>]
   children: (todo: Todo) => JSX.Element
 }
 
-const TodoContainer = ({
-  todosState: [todos, setTodos],
-  filterState: [filterOn, setFilterOn],
-  children,
-}: Props) => {
+const TodoContainer = ({ children }: Props) => {
+  const [filterOn, setFilterOn] = useAtom(store.todo.filterOnAtom)
+  const [todos, setTodos] = useAtom(store.todo.todoAtom)
+
   const handleDeleteCompleted = () => {
     todo.crud.deleteCompleted()
     setTodos(todo.crud.filter(filterOn))
