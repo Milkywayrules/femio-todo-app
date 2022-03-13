@@ -1,11 +1,11 @@
 import todo from '@/helpers/todo'
-import { todoAtom } from '@/store/todoState'
-import { useAtom } from 'jotai'
+import store from '@/store'
+import { useUpdateAtom } from 'jotai/utils'
 import { FormEvent, useState } from 'react'
 
 const InputTodo = () => {
   const [newTodo, setNewTodo] = useState('')
-  const [, setTodos] = useAtom(todoAtom)
+  const setTodos = useUpdateAtom(store.todo.todoAtom)
 
   const handleTodoAdd = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
