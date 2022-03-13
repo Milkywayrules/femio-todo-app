@@ -23,8 +23,10 @@ const TodoContainer = ({
   return (
     <>
       <div className="divide-y divide-gray-l-300 overflow-hidden rounded shadow-lg dark:divide-gray-d-300">
+        {/* todo list items */}
         {todos.map(todo => children(todo))}
 
+        {/* todo list container footer */}
         <div className="flex w-full items-center justify-between gap-3 overflow-hidden bg-white py-4 px-4 text-xs text-gray-l-400 dark:bg-gray-d-400">
           <p className="whitespace-nowrap">{todos.length} items left</p>
 
