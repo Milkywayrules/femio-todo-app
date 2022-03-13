@@ -108,6 +108,11 @@ export default class CRUD {
     return this.getAll().length
   }
 
+  public replaceTodos(todos: Todo[]): Todo[] {
+    this._persistNewTodos(todos)
+    return this._todos
+  }
+
   public toggleComplete(id: Todo['id']) {
     const todos = this.getAll()
     const newTodos = todos.map(todo => ({
