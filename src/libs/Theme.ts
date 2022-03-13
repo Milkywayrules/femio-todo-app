@@ -1,7 +1,7 @@
 import StorageDriver from '@/libs/StorageDriver'
 
 type ThemeDarkModeType = 'light' | 'dark'
-type ThemeType = ThemeDarkModeType
+export type ThemeType = ThemeDarkModeType
 
 export default class Theme {
   private _storage
@@ -23,6 +23,10 @@ export default class Theme {
   private _applyToDoc(prevTheme: ThemeType, newTheme: ThemeType) {
     document.documentElement.classList.remove(prevTheme)
     document.documentElement.classList.add(newTheme)
+  }
+
+  public getKey() {
+    return this._storageKey
   }
 
   public set(newTheme: ThemeType) {
