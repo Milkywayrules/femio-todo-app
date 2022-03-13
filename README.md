@@ -35,14 +35,17 @@ Users should be able to:
 
 ### Screenshot
 
-![Pic 1](./.submission/screenshots/1.png)
-![Pic 2](./.submission/screenshots/2.png)
-![Pic 3](./.submission/screenshots/3.png)
-![Pic 4](./.submission/screenshots/4.png)
-![Pic 5](./.submission/screenshots/5.png)
-![Pic 6](./.submission/screenshots/6.png)
-![Pic 7](./.submission/screenshots/7.png)
-![Pic 8](./.submission/screenshots/8.png)
+![Desktop Screenshot 1](./.submission/screenshots/d1.png)
+![Desktop Screenshot 2](./.submission/screenshots/d2.png)
+![Desktop Screenshot 3](./.submission/screenshots/d3.png)
+![Desktop Screenshot 4](./.submission/screenshots/d4.png)
+![Desktop Screenshot 5](./.submission/screenshots/d5.png)
+![Desktop Screenshot 6](./.submission/screenshots/d6.png)
+![Desktop Screenshot 7](./.submission/screenshots/d7.png)
+![Desktop Screenshot 8](./.submission/screenshots/d8.png)
+![Mobile Screenshot 1](./.submission/screenshots/m1.png)
+![Mobile Screenshot 2](./.submission/screenshots/m2.png)
+![Mobile Screenshot 3](./.submission/screenshots/m3.png)
 
 ### Links
 
