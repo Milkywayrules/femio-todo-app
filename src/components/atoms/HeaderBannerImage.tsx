@@ -2,7 +2,7 @@ import store from '@/store'
 import { useAtomValue } from 'jotai'
 
 const HeaderBannerImage = () => {
-  const isDarkMode = useAtomValue(store.darkModeAtom)
+  const isDarkMode = useAtomValue(store.theme.darkModeAtom)
 
   return (
     <>

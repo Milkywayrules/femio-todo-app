@@ -7,3 +7,9 @@ const isDarkMode = theme.getIsDarkMode()
 // but since we handle storage implementation on libs,
 // we don't need Jotai's.
 export const darkModeAtom = atom(isDarkMode)
+
+const themeStore = {
+  darkModeAtom,
+}
+
+export default themeStore

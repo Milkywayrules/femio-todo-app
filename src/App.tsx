@@ -19,8 +19,8 @@ const FILTER_DEFAULT = todo.filter.get()
 
 const App = () => {
   const [filterOn, setFilterOn] = useState<FilterOnType>(FILTER_DEFAULT)
-  const [todos, setTodos] = useAtom(store.todoAtom)
-  const [isDarkMode, setIsDarkMode] = useAtom(store.darkModeAtom)
+  const [todos, setTodos] = useAtom(store.todo.todoAtom)
+  const [isDarkMode, setIsDarkMode] = useAtom(store.theme.darkModeAtom)
 
   // refilter when filter changes
   useEffect(() => {

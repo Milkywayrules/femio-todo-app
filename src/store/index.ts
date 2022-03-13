@@ -1,9 +1,9 @@
-import { darkModeAtom } from '@/store/themeStore'
-import { todoAtom } from '@/store/todoStore'
+import themeStore from '@/store/themeStore'
+import todoStore from '@/store/todoStore'
 
 const store = {
-  darkModeAtom,
-  todoAtom,
+  theme: themeStore,
+  todo: todoStore,
 }
 
 export default store
