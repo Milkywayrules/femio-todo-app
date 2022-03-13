@@ -5,24 +5,33 @@ import { Todo } from '@/libs/todo'
 import { FilterOnType } from '@/libs/todo/Filter'
 import store from '@/store'
 import { useUpdateAtom } from 'jotai/utils'
-import { Fragment } from 'react'
+import { forwardRef } from 'react'
 
-const TodoItem = ({ id, todo: text, isComplete, filterOn }: Todo & { filterOn: FilterOnType }) => {
-  const setTodos = useUpdateAtom(store.todo.todoAtom)
+export interface PropsTodoItem extends Todo {
+  filterOn: FilterOnType
+  parentProps?: any
+}
 
-  const handleTodoComplete = (id: Todo['id']) => {
-    todo.crud.toggleComplete(id)
-    setTodos(todo.crud.filter(filterOn))
-  }
+const TodoItem = forwardRef<HTMLDivElement, PropsTodoItem>(
+  ({ id, todo: text, isComplete, filterOn, parentProps }, ref) => {
+    const setTodos = useUpdateAtom(store.todo.todoAtom)
 
-  const handleTodoDelete = (id: Todo['id']) => {
-    todo.crud.delete(id)
-    setTodos(todo.crud.filter(filterOn))
-  }
+    const handleTodoComplete = (id: Todo['id']) => {
+      todo.crud.toggleComplete(id)
+      setTodos(todo.crud.filter(filterOn))
+    }
 
-  return (
-    <Fragment key={id}>
-      <div className="flex w-full items-center justify-between gap-3 overflow-hidden bg-white py-3.5 px-4 text-sm dark:bg-gray-d-400">
+    const handleTodoDelete = (id: Todo['id']) => {
+      todo.crud.delete(id)
+      setTodos(todo.crud.filter(filterOn))
+    }
+
+    return (
+      <div
+        ref={ref}
+        className="flex w-full items-center justify-between gap-3 overflow-hidden bg-white py-3.5 px-4 text-sm dark:bg-gray-d-400"
+        {...parentProps}
+      >
         <div
           className={`flex w-full items-center gap-3 hover:cursor-pointer focus-visible:bg-blue-bright ${
             isComplete
@@ -58,8 +67,8 @@ const TodoItem = ({ id, todo: text, isComplete, filterOn }: Todo & { filterOn: F
           <Icons.cross className="h-5 w-5 fill-gray-d-300/50 dark:fill-gray-d-300" />
         </button>
       </div>
-    </Fragment>
-  )
-}
+    )
+  },
+)
 
 export default TodoItem

@@ -1,14 +1,16 @@
 import FilterControl from '@/components/FilterControl'
+import TodoListContainer from '@/components/TodoListContainer'
+import TodoListContainerDraggable from '@/components/TodoListContainerDraggable'
 import todo from '@/helpers/todo'
-import { Todo } from '@/libs/todo'
 import store from '@/store'
 import { useAtom } from 'jotai'
 
 interface Props {
-  children: (todo: Todo) => JSX.Element
+  // children: (todo: Todo, index: number) => JSX.Element
+  contentDraggable: boolean
 }
 
-const TodoContainer = ({ children }: Props) => {
+const TodoContainer = ({ contentDraggable }: Props) => {
   const [filterOn, setFilterOn] = useAtom(store.todo.filterOnAtom)
   const [todos, setTodos] = useAtom(store.todo.todoAtom)
 
@@ -20,8 +22,13 @@ const TodoContainer = ({ children }: Props) => {
   return (
     <>
       <div className="divide-y divide-gray-l-300 overflow-hidden rounded shadow-lg dark:divide-gray-d-300">
-        {/* todo list items */}
-        {todos.map(todo => children(todo))}
+        {contentDraggable ? (
+          <TodoListContainerDraggable />
+        ) : (
+          <>
+            <TodoListContainer />
+          </>
+        )}
 
         {/* todo list container footer */}
         <div className="flex w-full items-center justify-between gap-3 overflow-hidden bg-white py-4 px-4 text-xs text-gray-l-400 dark:bg-gray-d-400">
@@ -37,13 +44,6 @@ const TodoContainer = ({ children }: Props) => {
           </button>
         </div>
       </div>
-
-      <FilterControl
-        filterOn={filterOn}
-        setFilterOn={setFilterOn}
-        hideOn="desktop"
-        className="py-3.5 px-4 shadow-md"
-      />
     </>
   )
 }
