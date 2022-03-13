@@ -35,6 +35,8 @@ Users should be able to:
 
 ### Screenshot
 
+All of the screenshots are kinda HD, so try the app by yourself instead of waiting forever...
+
 ![Desktop Screenshot 1](./.submission/screenshots/d1.png)
 ![Desktop Screenshot 2](./.submission/screenshots/d2.png)
 ![Desktop Screenshot 3](./.submission/screenshots/d3.png)
@@ -91,3 +93,9 @@ To be add later, for now take a look at **_Built with_** section above
 ## Acknowledgments
 
 idk, no one for this project
+
+<style type="text/css">
+  img {
+    width: 300px;
+  }
+</style>
