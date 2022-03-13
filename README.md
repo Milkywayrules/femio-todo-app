@@ -33,22 +33,6 @@ Users should be able to:
 - Toggle light and dark mode
 - **Bonus**: Drag and drop to reorder items on the list
 
-### Screenshot
-
-All of the screenshots are kinda HD, so try the app by yourself instead of waiting forever...
-
-![Desktop Screenshot 1](./.submission/screenshots/d1.png)
-![Desktop Screenshot 2](./.submission/screenshots/d2.png)
-![Desktop Screenshot 3](./.submission/screenshots/d3.png)
-![Desktop Screenshot 4](./.submission/screenshots/d4.png)
-![Desktop Screenshot 5](./.submission/screenshots/d5.png)
-![Desktop Screenshot 6](./.submission/screenshots/d6.png)
-![Desktop Screenshot 7](./.submission/screenshots/d7.png)
-![Desktop Screenshot 8](./.submission/screenshots/d8.png)
-![Mobile Screenshot 1](./.submission/screenshots/m1.png)
-![Mobile Screenshot 2](./.submission/screenshots/m2.png)
-![Mobile Screenshot 3](./.submission/screenshots/m3.png)
-
 ### Links
 
 - Solution URL: [Github Repo](https://github.com/Milkywayrules/femio-todo-app)
@@ -93,6 +77,22 @@ To be add later, for now take a look at **_Built with_** section above
 ## Acknowledgments
 
 idk, no one for this project
+
+### Screenshot
+
+All of the screenshots are kinda HD, so try the app by yourself instead of waiting forever...
+
+![Desktop Screenshot 1](./.submission/screenshots/d1.png)
+![Desktop Screenshot 2](./.submission/screenshots/d2.png)
+![Desktop Screenshot 3](./.submission/screenshots/d3.png)
+![Desktop Screenshot 4](./.submission/screenshots/d4.png)
+![Desktop Screenshot 5](./.submission/screenshots/d5.png)
+![Desktop Screenshot 6](./.submission/screenshots/d6.png)
+![Desktop Screenshot 7](./.submission/screenshots/d7.png)
+![Desktop Screenshot 8](./.submission/screenshots/d8.png)
+![Mobile Screenshot 1](./.submission/screenshots/m1.png)
+![Mobile Screenshot 2](./.submission/screenshots/m2.png)
+![Mobile Screenshot 3](./.submission/screenshots/m3.png)
 
 <style type="text/css">
   img {
