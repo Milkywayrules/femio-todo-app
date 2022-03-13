@@ -58,6 +58,10 @@ Users should be able to:
 
 A lot! But, to be add later if I have more time to write 🚀
 
+Some of them are trying drag n drop, Jotai, and Vite for the first time.
+
+It took me ~30 hours over 2 weekends to complete this project with all the experimentations, trial & error, refactoring, and etc.
+
 ### Continued development
 
 I still curious about the advanced implementation of render function. I use that in this project earlier but refactor it since the implementation of drag n drop feature. It's interesting and definitely love to explore more later.
@@ -78,7 +82,7 @@ To be add later, for now take a look at **_Built with_** section above
 
 idk, no one for this project
 
-### Screenshot
+## Screenshots
 
 All of the screenshots are kinda HD, so try the app by yourself instead of waiting forever...
 
