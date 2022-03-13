@@ -1,6 +1,8 @@
 # Frontend Mentor - Todo app solution
 
-This is a solution to the [Todo app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Todo app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+
+But their **_syle-guide.md_** file (free version) is not that good, you will just get confused by their limited amount of information you need. 🤣
 
 ## Table of contents
 
@@ -14,9 +16,6 @@ This is a solution to the [Todo app challenge on Frontend Mentor](https://www.fr
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -36,83 +35,56 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![Pic 1](./.submission/screenshots/1.png)
+![Pic 2](./.submission/screenshots/2.png)
+![Pic 3](./.submission/screenshots/3.png)
+![Pic 4](./.submission/screenshots/4.png)
+![Pic 5](./.submission/screenshots/5.png)
+![Pic 6](./.submission/screenshots/6.png)
+![Pic 7](./.submission/screenshots/7.png)
+![Pic 8](./.submission/screenshots/8.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Github Repo](https://github.com/Milkywayrules/femio-todo-app)
+- Live Site URL: [Femio Todo App](https://femio-todo-app.vercel.app/)
 
 ## My process
 
 ### Built with
 
 - Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- CSS Grid
+- Flexbox (everywhere)
 - Mobile-first workflow
+- [Vercel](https://vercel.com/) - Host your React/Nextjs/Vue/Nuxtjs/Svelte/etc. for freeee
+- [Vite](https://vitejs.dev/) - JS build tool
 - [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- [Tailwindcss](https://tailwindcss.com/) - For beautiful & veryveryvery great styling
+- [react-beautiful-dnd (rbd)](https://github.com/atlassian/react-beautiful-dnd) - For easy, beautiful, & accessible drag n drop
+- [Prettier](https://prettier.io/) - We know we write messy code, Prettier do the heavy work
+- [Typescript](https://www.typescriptlang.org/) - Again, we know we write untrusted code, TS do the heavy work
+- [Jotai](https://jotai.org/docs/basics/comparison) - Use Recoil before? Or Redux? Zustand? Or use the context & reducer hooks? Try Jotai 🎉
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+A lot! But, to be add later if I have more time to write 🚀
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+I still curious about the advanced implementation of render function. I use that in this project earlier but refactor it since the implementation of drag n drop feature. It's interesting and definitely love to explore more later.
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+To be add later, for now take a look at **_Built with_** section above
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+- Website - [dioilham.com](https://dioilham.com)
+- Frontend Mentor - [@Milkywayrules](https://www.frontendmentor.io/profile/Milkywayrules)
+- Github - [@Milkywayrules](https://github.com/milkywayrules)
+- Linkedin - [@dioilham](https://www.linkedin.com/in/dioilham/)
+- Instagram - [@dioilham](https://www.instagram.com/dioilham)
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+idk, no one for this project
